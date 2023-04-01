@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
         features="src/test/resources/features",
         glue= {"stepdefinitions", "hooks"},
-        tags="@Room_Create"  ,
+        tags="@e2e"  ,
 
         dryRun= false
 

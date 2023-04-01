@@ -1,4 +1,5 @@
 package pages;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -41,4 +42,9 @@ public class MedunnaRoomPage {
 
     @FindBy(xpath = "//tbody/tr[1]/td[1]")
     public WebElement fistId;
+
+
+
+
+
 }

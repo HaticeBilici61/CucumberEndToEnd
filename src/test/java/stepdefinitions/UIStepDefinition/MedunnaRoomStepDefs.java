@@ -3,16 +3,18 @@ package stepdefinitions.UIStepDefinition;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.MedunnaHomePage;
 import pages.MedunnaRoomPage;
+import utilities.AuthenticationMedunna;
 import utilities.Driver;
 
 
 import static org.junit.Assert.assertTrue;
 
-public class MedunnaRoomStepDefs {
+public class MedunnaRoomStepDefs  {
     MedunnaHomePage medunnaHomePage = new MedunnaHomePage();
     MedunnaRoomPage medunnaRoomPage = new MedunnaRoomPage();
     public static int roomNumber = Faker.instance().number().numberBetween(1000,1000000);
@@ -68,8 +70,9 @@ public class MedunnaRoomStepDefs {
 
     @When("click on Save button")
     public void click_on_save_button() {
-
-        medunnaRoomPage.saveSubmitButton.click();
+//     medunnaRoomPage.saveSubmitButton.click();
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+        js.executeScript("arguments[0].click();",medunnaRoomPage.saveSubmitButton);
     }
 
 }

@@ -28,7 +28,7 @@ public class RoomCreationStepDefs {
         spec.pathParams("first","api","second","rooms");
 
         //Set the expected data
-      expectedData=new Room("Api'dan yeni oda",234,roomNumber,"TWIN",true);
+      expectedData=new Room("lutfen silmeyin",250,roomNumber,"SUITE",true);
 
         //send to request and get to response
       response=  given(spec).body(expectedData).post("/{first}/{second}");
@@ -44,10 +44,10 @@ public class RoomCreationStepDefs {
         response.
                 then().
                 body("roomNumber", equalTo(roomNumber)).
-                body("roomType", equalTo("TWIN")).
+                body("roomType", equalTo("SUITE")).
                 body("status", equalTo(true)).
-                body("price", equalTo(123)).
-                body("description", equalTo("Api'dan yeni oda"));
+                body("price", equalTo(250)).
+                body("description", equalTo("lutfen silmeyin"));
 
         //2. Validation
         JsonPath jsonPath = response.jsonPath();

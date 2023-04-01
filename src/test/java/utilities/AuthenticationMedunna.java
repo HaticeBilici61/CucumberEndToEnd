@@ -2,6 +2,8 @@ package utilities;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,4 +23,10 @@ public class AuthenticationMedunna {
         Response response = given().contentType(ContentType.JSON).body(bodyMap).post("https://medunna.com/api/authenticate");
         return  response.jsonPath().getString("id_token");
     }
+    public static void clickByJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", element);
+    }
+
+
 }
