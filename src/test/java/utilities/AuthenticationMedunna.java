@@ -23,10 +23,6 @@ public class AuthenticationMedunna {
         Response response = given().contentType(ContentType.JSON).body(bodyMap).post("https://medunna.com/api/authenticate");
         return  response.jsonPath().getString("id_token");
     }
-    public static void clickByJS(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].click();", element);
-    }
 
 
 }

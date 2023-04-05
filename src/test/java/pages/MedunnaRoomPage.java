@@ -43,6 +43,10 @@ public class MedunnaRoomPage {
     @FindBy(xpath = "//tbody/tr[1]/td[1]")
     public WebElement fistId;
 
+    public static void clickByJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", element);
+    }
 
 
 

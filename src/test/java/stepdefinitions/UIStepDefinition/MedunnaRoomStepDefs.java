@@ -17,6 +17,8 @@ import static org.junit.Assert.assertTrue;
 public class MedunnaRoomStepDefs  {
     MedunnaHomePage medunnaHomePage = new MedunnaHomePage();
     MedunnaRoomPage medunnaRoomPage = new MedunnaRoomPage();
+
+
     public static int roomNumber = Faker.instance().number().numberBetween(1000,1000000);
     public static String firstId;
 
@@ -71,8 +73,10 @@ public class MedunnaRoomStepDefs  {
     @When("click on Save button")
     public void click_on_save_button() {
 //     medunnaRoomPage.saveSubmitButton.click();
-        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
-        js.executeScript("arguments[0].click();",medunnaRoomPage.saveSubmitButton);
+//        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+//        js.executeScript("arguments[0].click();",medunnaRoomPage.saveSubmitButton);
+
+        medunnaRoomPage.clickByJS(medunnaRoomPage.saveSubmitButton);
     }
 
 }
